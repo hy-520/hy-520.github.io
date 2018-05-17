@@ -1,5 +1,5 @@
 /******************************************
-*  Author : Author   
+*  Author : Author
 *  Created On : Sun May 13 2018
 *  File : index.css
 *******************************************/
@@ -11,11 +11,19 @@ html, body {
     margin: 0;
 }
 
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+    background: url('./img/love4.jpg') center top no-repeat;
+    background-size: cover;
+}
+
 .main {
-    display: block;
-    /* background-color: black; */
-    /* background: url('./img/default.jpg') center top no-repeat;  */
-    background: url('./img/main.jpg') center top no-repeat; 
+    display: none;
+    background: url('./img/love4.jpg') center top no-repeat;
     background-size: cover;
 }
 
@@ -50,11 +58,72 @@ html, body {
     margin: 16px 0 10px;
 }
 
-.superman {
+.logo {
     position: absolute;
-    top: 180px;
-    /* left: 250px; */
-    left: 60%;
-    width: 120px;
+    top: 160px;
+    left: 65%;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000;
+    animation: rotate 3s infinite;
     z-index: 11;
+}
+
+.logo::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+    transform-origin: right center;
+    transform: rotate(25.9deg) scale(1.12);
+}
+
+@keyframes rotate {
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.logo-square {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-left: 1px solid #000;
+}
+
+.logo-square--top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom: 1px solid #000;
+}
+
+.logo-square--top::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
+    transform-origin: bottom center;
+    transform: rotate(45deg) scale(1.414);
+}
+
+.logo-square--bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
