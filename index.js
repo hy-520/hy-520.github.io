@@ -3,6 +3,7 @@
 (function () {
     const $canvas = $('#main');
     const $logo = $('#logo');
+    const $bgMusic = $('#bg-music');
     // const $story = $('#story');
     // const $storyTitle = $story.find('.story-title');
     // const $storyCnt = $story.find('.story-content');
@@ -44,6 +45,16 @@
         bubbles.forEach((item) => {
             const img = new Image();
             img.src = `./img/${item.bg}.jpg`;
+        });
+    }
+
+    function initAudio() {
+        document.addEventListener('WeixinJSBridgeReady', () => {
+            $bgMusic[0].play();
+        });
+
+        document.addEventListener('touchstart', () => {
+            $bgMusic[0].play();
         });
     }
 
@@ -109,6 +120,7 @@
     mainCanvas.height = windowHeight;
 
     initBubble();
+    initAudio();
     // bindEvent();
 
     (function animate() {
