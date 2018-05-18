@@ -36,11 +36,25 @@ body {
     min-height: 45px;
     margin-left: -40%;
     padding: 10px 20px;
-    background-color: #ededed;
-    color: #3b200c;
+    /* background-color: #ededed;
+    color: #3b200c; */
     opacity: .7;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+
+    background: hsla(0,0%,100%,.3);
+    overflow: hidden;
+}
+
+.story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(20px);
+    margin: -30px;
 }
 
 .story-title {
