@@ -1,9 +1,3 @@
-/******************************************
-*  Author : Author
-*  Created On : Sun May 13 2018
-*  File : index.css
-*******************************************/
-
 html, body {
     width: 100%;
     height: 100%;
@@ -17,13 +11,13 @@ html, body {
 }
 
 body {
-    background: url('./img/love4.jpg') center top no-repeat;
+    background: url('./img/story/love4.jpg') center top no-repeat;
     background-size: cover;
 }
 
 .main {
     display: none;
-    background: url('./img/love4.jpg') center top no-repeat;
+    background: url('./img/story/love4.jpg') center top no-repeat;
     background-size: cover;
 }
 
@@ -66,7 +60,7 @@ body {
     box-sizing: border-box;
     width: 60px;
     height: 60px;
-    border: 1px solid #000;
+    border: 1px solid #222;
     animation: rotate 3s infinite;
     z-index: 11;
 }
@@ -79,7 +73,7 @@ body {
     width: 15px;
     height: 100%;
     box-sizing: border-box;
-    border-right: 1px solid #000;
+    border-right: 1px solid #222;
     transform-origin: right center;
     transform: rotate(25.9deg) scale(1.12);
 }
@@ -99,14 +93,14 @@ body {
     box-sizing: border-box;
     width: 30px;
     height: 30px;
-    border-left: 1px solid #000;
+    border-left: 1px solid #222;
 }
 
 .logo-square--top {
     position: absolute;
     top: 0;
     right: 0;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #222;
 }
 
 .logo-square--top::before{
@@ -117,7 +111,7 @@ body {
     width: 100%;
     height: 15px;
     box-sizing: border-box;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #222;
     transform-origin: bottom center;
     transform: rotate(45deg) scale(1.414);
 }

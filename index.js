@@ -14,7 +14,12 @@
     const ctx = mainCanvas.getContext('2d');
     const bubbles = window.bubbles;
     const bubbleImg = window.bubbleImg;
-    let typeFlag = false;
+    const config = {
+        typeFlag: false,
+        curLoop: 0,
+        curLoopBubble: 0,
+        loopLen: bubbles.length,
+    };
 
     $canvas.show();
 
@@ -44,7 +49,7 @@
     function initBubble() {
         bubbles.forEach((item) => {
             const img = new Image();
-            img.src = `./img/${item.bg}.jpg`;
+            img.src = `./img/story/${item.bg}.jpg`;
         });
     }
 
@@ -59,30 +64,42 @@
     }
 
     function renderStory(bubble) {
-        if (typeFlag) {
+        // 正在打字 或者 当前循环已经播放过该气泡
+        if (config.typeFlag || bubble.times !== config.curLoop) {
             return;
         }
-        typeFlag = true;
+
+        // 一次循环一个气泡只播放一次
+        config.typeFlag = true;
+        config.curLoopBubble++;
+        bubble.times++;
+
+        if (config.curLoopBubble === config.loopLen) {
+            config.curLoopBubble = 0;
+            config.curLoop++;
+        }
 
         // 隐藏选择logo
         $logo.hide();
 
+        // 更换场景
         $canvas.css({
-            background: `url(./img/${bubble.bg}.jpg) center top no-repeat`,
+            background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
             'background-size': 'cover',
             transition: 'background .5s',
         });
 
+        // 打印故事
         const typed = new Typed('#story', {
             strings: [
                 '',
                 `<p class="story-title">${bubble.title}</p><p class="story-content">${bubble.content}</p>`,
             ],
             typeSpeed: 100,
-            backSpeed: 20,
+            backSpeed: 50,
             showCursor: false,
             onComplete: () => {
-                typeFlag = false;
+                config.typeFlag = false;
                 delete typed;
             },
         });
@@ -100,8 +117,8 @@
 
     function isOverflow(bubble) {
         if (bubble.y < -bubble.height) {
-            bubble.x = random(10, windowWidth - 10 - bubble.height);
-            bubble.y = windowHeight + bubble.height;
+            bubble.x = bubble.initialX;
+            bubble.y = bubble.initialY;
         } else if (bubble.y < 0 && bubble.y - bubble.vy >= 0) {
             renderStory(bubble);
         }

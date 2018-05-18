@@ -21,7 +21,7 @@
     left: 60%;
     width: 120px;
     z-index: 11;
-    animation: fly 6s 1;
+    animation: fly 8s 1;
     opacity: 0;
     display: none;
 }
