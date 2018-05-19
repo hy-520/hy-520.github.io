@@ -86,7 +86,7 @@
         $canvas.css({
             background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
             'background-size': 'cover',
-            transition: 'background .5s',
+            transition: 'background 1s',
         });
 
         // 打印故事

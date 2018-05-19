@@ -15,7 +15,7 @@ const bubbles = [{
     id: 'leaf',
     bg: '20180220',
     title: '2018/02/20 梅城东中',
-    content: '一大早来到东中，一进校门，熟悉的篮球场上是来不及扫的满地落叶。静静的发呆，等待着我和火火从东中开始的第一次正式约会。',
+    content: '一大早来到东中，一进校门，熟悉的篮球场上是来不及扫的满地落叶。静静的发呆，等待着我和火火从东中开始的第一次约会。',
     manual: true,
     times: 0,
 }, {
@@ -64,7 +64,7 @@ const bubbles = [{
     id: 'leaf',
     bg: '20171119',
     title: '2017/11/19 深圳',
-    content: '覔書店，默默的看着你，喜欢却只能埋在心里。',
+    content: '覔書店，默默地看着你，喜欢却只能埋在心里。',
     times: 0,
 }, {
     x: 50,
@@ -135,7 +135,7 @@ const bubbles = [{
     height: 90,
     id: 'default',
     bg: '20180330',
-    title: '2017/03/30 广州',
+    title: '2018/03/30 广州',
     content: '谁家的傻宝宝，我要带回家去。',
     times: 0,
 }, {
@@ -225,8 +225,8 @@ bubbles.forEach((item) => {
     item.width = random(30, 90);
     item.height = item.width;
     item.x = random(10, windowWidth - item.width - 10);
-    item.y = random(windowHeight, windowHeight * len);
-    item.vy = random(-2.5, -0.5);
+    item.y = random(windowHeight, (windowHeight * len) / 2);
+    item.vy = random(-2.5, -0.5) - ((item.y * 2) / (windowHeight * len));
     item.initialX = item.x;
     item.initialY = item.y;
 });
