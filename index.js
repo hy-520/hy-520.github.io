@@ -50,6 +50,10 @@
         bubbles.forEach((item) => {
             const img = new Image();
             img.src = `./img/story/${item.bg}.jpg`;
+
+            img.onload = () => {
+                console.log('---onload----');
+            };
         });
     }
 
