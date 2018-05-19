@@ -91,14 +91,14 @@
         });
 
         // 更换场景
-        setTimeout(() => {
-            $canvas.css({
-                background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
-                // background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
-                'background-size': 'cover',
-                transition: 'background 1s',
-            });
-        }, 300);
+        $canvas.css({
+            background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
+            // background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
+            'background-size': 'cover',
+            transition: 'background 2s',
+            // animation: '2s fadeIn infinite',
+            // opactiy: 1,
+        });
 
         // 打印故事
         const typed = new Typed('#story', {
