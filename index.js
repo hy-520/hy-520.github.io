@@ -84,11 +84,11 @@
         // 隐藏选择logo
         $logo.hide();
 
-        $body.css({
-            // background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
-            background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
-            'background-size': 'cover',
-        });
+        // $body.css({
+        //     // background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
+        //     background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
+        //     'background-size': 'cover',
+        // });
 
         // 更换场景
         $canvas.css({
