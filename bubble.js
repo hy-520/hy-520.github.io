@@ -182,6 +182,30 @@ const bubbles = [{
     width: 90,
     height: 90,
     id: 'default',
+    bg: '20180113-4',
+    title: '2018/01/13 香港',
+    content: '收到的第一个火火送的东西~那时候，我只是你的同学，你却是我心心念念的人。',
+    times: 0,
+}, {
+    x: 50,
+    y: windowHeight + 50,
+    vx: 3,
+    vy: -2.5,
+    width: 90,
+    height: 90,
+    id: 'default',
+    bg: '20180416',
+    title: '2018/04/16 梅城',
+    content: '远古时候有个传说，喜欢花的女孩都是可爱的小精灵变的~',
+    times: 0,
+}, {
+    x: 50,
+    y: windowHeight + 50,
+    vx: 3,
+    vy: -2.5,
+    width: 90,
+    height: 90,
+    id: 'default',
     bg: '20180220-4',
     title: '2018/02/20 梅城',
     content: '请叫我夹娃娃大王。发现梅城的公仔怎么这么好夹，还是说有火火同学在身边会变得超幸运？',
@@ -237,7 +261,7 @@ bubbles.forEach((item) => {
     item.width = random(30, 90);
     item.height = item.width;
     item.x = random(10, windowWidth - item.width - 10);
-    item.y = random(windowHeight, (windowHeight * len) / 2);
+    item.y = random(windowHeight + 200, (windowHeight * len) / 2);
     item.vy = random(-2.5, -0.5) - ((item.y * 2) / (windowHeight * len));
     item.initialX = item.x;
     item.initialY = item.y;
