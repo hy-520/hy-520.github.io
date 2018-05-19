@@ -2,6 +2,7 @@
 
 (function () {
     const $canvas = $('#main');
+    const $body = $(document.body);
     const $logo = $('#logo');
     const $bgMusic = $('#bg-music');
     // const $story = $('#story');
@@ -50,10 +51,6 @@
         bubbles.forEach((item) => {
             const img = new Image();
             img.src = `./img/story/${item.bg}.jpg`;
-
-            img.onload = () => {
-                console.log('---onload----');
-            };
         });
     }
 
@@ -86,12 +83,19 @@
         // 隐藏选择logo
         $logo.hide();
 
-        // 更换场景
-        $canvas.css({
+        $body.css({
             background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
             'background-size': 'cover',
-            transition: 'background 1s',
         });
+
+        // 更换场景
+        setTimeout(() => {
+            $canvas.css({
+                background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
+                'background-size': 'cover',
+                transition: 'background 1s',
+            });
+        }, 300);
 
         // 打印故事
         const typed = new Typed('#story', {
