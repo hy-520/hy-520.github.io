@@ -13,13 +13,14 @@ html, body {
 body {
     background: url('./img/story/love4.jpg') center top no-repeat;
     background-size: cover;
+    /* transition: all 1s; */
 }
 
 .main {
     display: none;
-    background: url('./img/story/love4.jpg') center top no-repeat;
-    background-size: cover;
-    transition: all 1s;
+    /* background: url('./img/story/love4.jpg') center top no-repeat; */
+    /* background-size: cover; */
+    /* transition: all 1s; */
 }
 
 .bubble {

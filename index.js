@@ -50,8 +50,8 @@
     function initBubble() {
         bubbles.forEach((item) => {
             const img = new Image();
-            // img.src = `./img/story/${item.bg}.jpg`;
-            img.src = `https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${item.bg}.jpg`;
+            img.src = `./img/story/${item.bg}.jpg`;
+            // img.src = `https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${item.bg}.jpg`;
         });
     }
 
@@ -85,22 +85,21 @@
         $logo.hide();
 
         $body.css({
-            // background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
-            background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
+            background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
+            // background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
             'background-size': 'cover',
         });
 
         // 更换场景
         setTimeout(() => {
             $canvas.css({
-                background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
-                // background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
+                // background: `url(https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${bubble.bg}.jpg) center top no-repeat`,
+                background: `url(./img/story/${bubble.bg}.jpg) center top no-repeat`,
                 'background-size': 'cover',
-                // transition: 'background 2s',
-                // animation: '2s fadeIn infinite',
-                // opactiy: 1,
+                transition: 'background 2s',
+                opactiy: 1,
             });
-        }, 1000);
+        }, 300);
 
         // 打印故事
         const typed = new Typed('#story', {
