@@ -160,7 +160,7 @@ const bubbles = [{
     id: 'default',
     bg: '20180430',
     title: '2018/04/30 梅城',
-    content: '玩完密室，看着你傻傻地堆积木。',
+    content: '玩完密室，看着你傻傻地堆木块。',
     times: 0,
 }, {
     x: 50,
@@ -196,7 +196,7 @@ const bubbles = [{
     id: 'default',
     bg: '20180416',
     title: '2018/04/16 梅城',
-    content: '远古时候有个传说，喜欢花的女孩都是可爱的小精灵变的~',
+    content: '有个传说，喜欢花的女孩都是可爱的小精灵变的~你就是我的火精灵。',
     times: 0,
 }, {
     x: 50,
@@ -219,7 +219,7 @@ const bubbles = [{
     height: 90,
     id: 'leaf',
     bg: 'leaf',
-    title: '想象中未来，',
+    title: '想象着未来，',
     content: '我们一起，看落叶纷飞。',
     times: 0,
 }, {
