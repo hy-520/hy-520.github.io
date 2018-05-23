@@ -290,15 +290,21 @@ bubbles.forEach((item) => {
     if (item.manual) {
         item.initialX = item.x;
         item.initialY = item.y;
+        item.minY = -item.height;
+        item.maxY = windowHeight + item.height;
 
         return;
     }
 
-    item.width = random(30, 90);
+    item.width = random(60, 110);
     item.height = item.width;
     item.x = random(10, windowWidth - item.width - 10);
-    item.y = random(windowHeight + 200, (windowHeight * len) / 2);
-    item.vy = random(-2.5, -0.5) - ((item.y * 2) / (windowHeight * len));
+    item.y = random(windowHeight, (windowHeight * len) / 1.5);
+    item.imgWidth = item.width - 20;
+    item.imgHeight = item.imgWidth;
+    item.minY = -item.height;
+    item.maxY = windowHeight + item.height;
+    item.vy = random(-2.5, -0.5) - ((item.y * 1.5) / (windowHeight * len));
     item.initialX = item.x;
     item.initialY = item.y;
 });

@@ -24,9 +24,16 @@
 
     $canvas.show();
 
-    const random = (min, max) => {
-        return min + (Math.random() * (max - min));
-    };
+    // function circleImg (context, img, x, y, r) {
+    //     context.save();
+    //     const d = 2 * r;
+    //     const cx = x + r;
+    //     const cy = y + r;
+    //     context.arc(cx, cy, r, 0, 2 * Math.PI);
+    //     context.clip();
+    //     context.drawImage(img, x, y, d, d);
+    //     context.restore();
+    // }
 
     // const touchBubble = (x, y) => {
     //     bubbles.some((item) => {
@@ -47,10 +54,21 @@
     //     });
     // };
 
+    const random = (min, max) => {
+        return min + (Math.random() * (max - min));
+    };
+
     function initBubble() {
         bubbles.forEach((item) => {
             const img = new Image();
+            const smallImg = new Image();
             img.src = `./img/story/${item.bg}.jpg`;
+            // smallImg.src = `./img/story/min/${item.bg}.jpg`;
+            // smallImg.src = `./img/story/${item.bg}.jpg`;
+            // smallImg.src = `./img/story/min/20180220.png`;
+            smallImg.src = `./img/story/min/${item.bg}.png`;
+
+            item.img = smallImg;
             // img.src = `https://hy-1256742784.cos.ap-guangzhou.myqcloud.com/story/${item.bg}.jpg`;
         });
     }
@@ -129,8 +147,12 @@
 
     function isOverflow(bubble) {
         if (bubble.y < -bubble.height) {
-            bubble.x = bubble.initialX;
-            bubble.y = bubble.initialY;
+            // bubble.x = bubble.initialX;
+            // bubble.y = bubble.initialY;
+
+            bubble.x = random(10, windowWidth - bubble.width - 10);
+            bubble.y = random(windowHeight, (windowHeight * bubbles.length) / 1.5);
+            bubble.vy = random(-2.5, -0.5) - ((bubble.y * 1.5) / (windowHeight * bubbles.length));
         } else if (bubble.y < 0 && bubble.y - bubble.vy >= 0) {
             renderStory(bubble);
         }
@@ -138,7 +160,21 @@
 
     function renderBubble() {
         bubbles.forEach((item) => {
-            ctx.drawImage(bubbleImg, item.x, item.y, item.width, item.height);
+            if (item.y <= item.maxY && item.y >= item.minY) {
+                // circleImg(ctx, item.img, item.x + (item.width / 2), item.y + (item.width / 2), item.width);
+
+                // const pattern = ctx.createPattern(item.img, 'repeat-y');
+                // ctx.save();
+                // ctx.beginPath();
+                // ctx.arc(item.x + (item.width / 2), item.y + (item.height / 2), item.width / 2 - 12, 0, 2 * Math.PI, false);
+                // ctx.fillStyle = pattern;
+                // ctx.fill();
+                // ctx.restore();
+
+                // ctx.drawImage(item.img, item.x + 10, item.y + 10, item.imgWidth, item.imgHeight);
+                ctx.drawImage(item.img, item.x + 8, item.y + 8, item.width - 16, item.height - 16);
+                ctx.drawImage(bubbleImg, item.x, item.y, item.width, item.height);
+            }
             item.y += item.vy;
 
             isOverflow(item);
